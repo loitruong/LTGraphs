@@ -1,0 +1,32 @@
+{
+  "name": "ltgraphs",
+  "version": "1.0.0",
+  "description": "LT Graphs Javascript library.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loitruong/LTGraphs.git"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.13.0",
+    "ts-loader": "^6.2.1",
+    "tsify": "^4.0.1",
+    "typescript": "^3.7.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "author": "Loi Truong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loitruong/LTGraphs/issues"
+  },
+  "homepage": "https://github.com/loitruong/LTGraphs#readme"
+}

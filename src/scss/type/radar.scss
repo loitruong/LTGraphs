@@ -1,0 +1,39 @@
+$width: 400px;
+
+svg {
+  width: $width;
+}
+
+.Gkeys svg{
+  cursor: pointer;
+}
+
+h2{
+  width: $width;
+  text-align: center;
+}
+
+
+.GenerateChartDiv{
+  width: $width;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+    max-width: 100%;
+  button{
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid black;
+    color: black;
+    font-size: 16px;
+    display: inline-block;
+    background-color: white;
+    transition: ease 0.3s all;
+    cursor: pointer;
+    outline: none;
+    &:hover{
+      background-color: black;
+      color: white;
+    }
+  }
+}
