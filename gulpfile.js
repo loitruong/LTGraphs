@@ -6,8 +6,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     buffer = require('vinyl-buffer'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer')
-
+    autoprefixer = require('gulp-autoprefixer'),
+    babelify = require('babelify')
 
 var scripts = {
     process: [, './js/src/*.js']
@@ -29,7 +29,8 @@ async function jsBuild(srcPath, destPath) {
         cache: {},
         packageCache: {}
     })
-    .plugin(tsify)
+    .plugin(tsify, require('./tsconfig.json'))
+    //.transform(babelify, { extension: ['.tsx', '.ts']})
     .bundle()
     .pipe(source('ltgraphs.js'))
     .pipe(buffer())
@@ -83,9 +84,14 @@ gulp.task('buildDemo', gulp.parallel('demoCSSBuild', 'srcCSSBuildToDemo', 'srcJS
 
 
 gulp.task('devwatch', function() { 
-	gulp.watch(PATH.src + '/scss/**/*.scss', gulp.parallel('srcCSSBuildToDemo'));
-	gulp.watch(PATH.demo + '/scss/**/*.scss', gulp.parallel('demoCSSBuild'));
-	gulp.watch(PATH.src + '/js/**/*.js', gulp.parallel('srcJSBuildToDemo'));
+    try{
+    	gulp.watch(PATH.src + '/scss/**/*.scss', gulp.parallel('srcCSSBuildToDemo'));
+    	gulp.watch(PATH.demo + '/scss/**/*.scss', gulp.parallel('demoCSSBuild'));
+    	gulp.watch(PATH.src + '/js/**/*.ts', gulp.parallel('srcJSBuildToDemo'));
+    }
+    catch(e){
+        console.log(e);
+    }
 });
 
 

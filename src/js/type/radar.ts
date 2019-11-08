@@ -1,17 +1,16 @@
 export { RadarChart };
 
-class RadarChart {
-  
-  svg : any;
+import { Chart } from './chart';
+
+class RadarChart extends Chart {
+
   mColors : Array<String>;
   mMaxPoint: Number;
   mData: Array<any>;
-  mChartWidth: Number;
-  mChartHeight: Number;
 
-  constructor(){
+  constructor(domString: string, width: number, height: number) {
+    super(domString, width, height);
     let self = this;
-    //Data
     let skills = Array.apply(null, Array(Math.floor(Math.random() * 12) + 3)).map(
       (x:any, i:any):String => {
       return "Skill " + (i + 1);
@@ -22,12 +21,9 @@ class RadarChart {
 
     self.mData = self.randomData(skills);
 
-    console.log(self.mData);
+    console.log(self.mDOM);
 
-    //init svg element
-    self.mChartWidth = 200;
-    self.mChartHeight = 150;
-    //self.svg = d3.select("#SkillChart").append("svg").attr("viewBox", "0 0 " + mChartWidth + " " + mChartHeight);
+    // self.svg = d3.select("#SkillChart").append("svg").attr("viewBox", "0 0 " + self.mChartWidth + " " + self.mChartHeight);
     // self.CenterX = ChartWidth / 2;
     // self.CenterY = (ChartHeight - 25) / 2;
     // self.PolygonSides = skills.length; //polygonsides will be base on number of skills
@@ -35,6 +31,22 @@ class RadarChart {
     // self.NumberOfPolygons = 5;
     // self.LineStroke = 0.1;
     //this.draw();
+  }
+
+  drawChart(): void{
+
+  }
+
+  /**
+   * Draw Polygons
+   *
+   * This method is to draw range polygons. Range 
+   *
+   * @param polygons -- number of range polygons that will be draw.
+   * @return return svg : g element
+   */
+  private drawRangePolygons(): void{
+
   }
 
   // draw(): void {  
