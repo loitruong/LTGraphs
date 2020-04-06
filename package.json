@@ -23,7 +23,8 @@
     "tsify": "^4.0.1",
     "typescript": "^3.7.2",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "minimist": ">=1.2.3"
   },
   "author": "Loi Truong",
   "license": "MIT",
